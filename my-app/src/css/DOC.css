@@ -1,0 +1,469 @@
+
+.Clogddd{
+    margin-top: 3rem;
+    margin-left: 6%;
+}
+
+.input_find_doc {
+    background-color: rgba(22, 100, 192, 0.3);
+    margin-bottom: 2%;
+    width: 85%;
+    border: 1px solid rgba(22, 100, 192, 0.5); 
+    color: #333;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.form_tochat{
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.input_tochat{
+    background-color: rgba(22, 100, 192, 0.3);
+    margin-top: 2%;
+    width: 70%;
+    border: 1px solid rgba(22, 100, 192, 0.5); 
+    color: #333;
+    padding: 3px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.input_find_doc:focus {
+    background-color: rgba(22, 100, 192, 0.6);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    outline: none; 
+}
+
+.btn_filters {
+    background-color: #1664c0; 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 2%; 
+    margin-left: 1%;
+}
+
+.btn_filters:hover {
+    background-color: #0d47a1; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+.label_select {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #0d47a1; 
+    text-align: start;
+    margin-top: 1%;
+    margin-left: 6%;
+}
+
+.select_specialization {
+    width: 85%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(22, 100, 192, 0.3); /* Мягкий голубой */
+    border-radius: 5px;
+    color: #333;
+    margin-top: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.select_specialization:focus {
+    background-color: rgba(22, 100, 192, 0.6);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+
+/* Стили для модального окна */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* мягкое затемнение */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content_2{
+    background-color: rgba(240, 250, 255, 0.95); /* светло-голубой фон */
+    padding: 1% 4% !important;
+    border-radius: 14px;
+    width: 50% !important;
+    color: #0d47a1; /* тёмно-синий текст */
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(39, 39, 39, 0.1); /* мягкая тень */
+    transition: transform 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+    border: none !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content {
+    background-color: rgba(240, 250, 255, 0.95); /* светло-голубой фон */
+    padding: 1% 4% !important;
+    border-radius: 14px;
+    width: 50% !important;
+    color: #0d47a1; /* тёмно-синий текст */
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(39, 39, 39, 0.1); /* мягкая тень */
+    transition: transform 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+    border: none !important;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #1664c0;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.modal-content button {
+    background-color: #b3e5fc; /* нежно-голубая кнопка */
+    color: #0d47a1;
+    border: 1px solid rgba(22, 100, 192, 0.3);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #81d4fa; /* немного насыщеннее при наведении */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.patient-info {
+    max-height: 60vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 6%;
+}
+.patient-info ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; 
+}
+
+.patient-info ul li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.petient_info_tel{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Doctors_toREC {
+    width: 94%;
+    background-color: rgba(225, 245, 254, 0.5);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(82, 218, 225, 0.2);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Doctors_toREC ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 1% 3% 5% 0%;
+    justify-content: center;
+}
+
+.doctor_card {
+    background-color: #ffffff;
+    border-left: 6px solid #00bcd4;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.doctor_card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.doctor_card p {
+    margin: 6px 0;
+    color: #2c3e50; /* тёмный синий вместо серого */
+    font-size: 15px;
+}
+
+
+.doctor_card h2 {
+    color: #0d47a1;
+    margin-bottom: 16px;
+}
+
+.chat_list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 90%;
+}
+
+.chat_card {
+    background-color: rgba(22, 100, 192, 0.08); /* очень мягкий голубой */
+    border-left: 5px solid #1664c0; /* фирменный акцент */
+    padding: 18px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(22, 100, 192, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #0d47a1;
+}
+
+.chat_card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(22, 100, 192, 0.25);
+}
+
+.chat_card p {
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+.chat_card button {
+    margin-top: 10px;
+    background-color: #00bcd4;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat_card button:hover {
+    background-color: #00e5ff;
+}
+
+
+
+.Btn_doc {
+    margin-top: 10px;
+}
+
+.Btn_doc button {
+    background-color: #b3e5fc; /* нежно-голубая */
+    color: #0d47a1;
+    border: 1px solid rgba(22, 100, 192, 0.3);
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Btn_doc button:hover {
+    background-color: #81d4fa; /* чуть ярче при наведении */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.chat-item {
+    margin-bottom: 10px;
+}
+
+.chat-item h3 {
+    color: #0d47a1; /* Тёмный синий для заголовка */
+    margin-bottom: 12px;
+}
+
+.chat-item p {
+    color: #333; /* Темно-серый для текста "Создан" */
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.messages {
+    max-height: 450px; /* Ограничиваем высоту списка сообщений */
+    overflow-y: auto;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.8); /* Легкий белый фон */
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(82, 218, 225, 0.1);
+}
+
+.message {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.my-message .bubble {
+    background-color: rgba(0, 123, 255, 0.1); /* Мягкий голубой для сообщений пользователя */
+    color: #0d47a1;
+    border-radius: 12px;
+    padding: 12px 16px;
+    max-width: 75%;
+    margin-left: auto;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+.doctor-message .bubble {
+    background-color: rgba(76, 175, 80, 0.1); /* Легкий зеленый для сообщений врача */
+    color: #333; /* Темный текст */
+    border-radius: 12px;
+    padding: 12px 16px;
+    max-width: 75%;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+.timestamp {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5); /* Тёмно-серый для времени */
+    margin-top: 8px;
+    text-align: right;
+}
+
+.bubble {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(0, 123, 255, 0.1); /* Стрелочка для my-message */
+}
+
+.my-message .bubble:after {
+    border-top-color: rgba(0, 123, 255, 0.1); /* Стрелочка для сообщений пользователя */
+}
+
+.doctor-message .bubble:after {
+    border-top-color: rgba(76, 175, 80, 0.1); /* Стрелочка для сообщений врача */
+}
+
+.lock-button {
+    background-color: #4caf50; /* Зеленый цвет для кнопки */
+    color: white;
+    font-size: 16px;
+    padding: 7px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 12px;
+}
+
+/* Эффект при наведении на кнопку */
+.lock-button:hover {
+    background-color: #388e3c; /* Более темный зеленый оттенок */
+    transform: translateY(-2px);
+}
+
+.Diagnozi_look {
+    background-color: #00bcd4; /* Голубой цвет */
+    color: white;
+    padding: 7px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 12px;
+    width: 100%;
+}
+
+/* Эффект при наведении на компонент диагноза */
+.Diagnozi_look:hover {
+    background-color: #00e5ff; /* Легкий голубой оттенок */
+    transform: translateY(-2px);
+}
+
+/* Стиль для формы медицинской карты */
+.MedicalRecordForm {
+    background-color: #0d47a1; /* Темно-синий цвет */
+    color: white;
+    padding: 7px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 12px;
+    width: 100%;
+}
+
+/* Эффект при наведении на форму медицинской карты */
+.MedicalRecordForm:hover {
+    background-color: #1664c0; /* Более темный синий оттенок */
+    transform: translateY(-2px);
+}
+.btns_doc{
+    display: flex;
+    gap: 3%;
+}
+
+
+.Catalogddd{
+    margin-bottom: 3rem;
+}

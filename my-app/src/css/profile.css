@@ -1,0 +1,565 @@
+/* Основные переменные для всего проекта */
+:root {
+  --primary-color: #2c6bac;
+  --primary-dark: #1a4980;
+  --primary-light: #4c8fd3;
+  --accent-color: #e3f2fd;
+  --text-color: #333;
+  --text-light: #666;
+  --text-white: #fff;
+  --bg-color: #f8fbff;
+  --white: #fff;
+  --border-color: #d9e8f6;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+  --card-shadow: 0 4px 8px rgba(44, 107, 172, 0.1);
+  --transition: all 0.3s ease;
+  --border-radius: 8px;
+  --border-radius-sm: 4px;
+}
+
+/* Общие стили */
+body {
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.profile-wrapper {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Стили для левой колонки профиля */
+.profile-avatar-container {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(76, 143, 211, 0.2);
+  transition: var(--transition);
+}
+
+.profile-avatar:hover {
+  transform: scale(1.02);
+}
+
+.avatar-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.avatar-upload span {
+  margin: 10px 0;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Блок истории диагнозов в левой колонке */
+.diagnosis-history-sidebar {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.diagnosis-history-sidebar h3 {
+  color: var(--primary-dark);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 600;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.diagnosis-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.diagnosis-sidebar-item {
+  background-color: var(--accent-color);
+  border-radius: var(--border-radius-sm);
+  padding: 12px 15px;
+  position: relative;
+  transition: var(--transition);
+  border-left: 4px solid var(--primary-color);
+}
+
+.diagnosis-sidebar-item:hover {
+  background-color: #d5e7fa;
+  transform: translateX(2px);
+}
+
+.diagnosis-sidebar-item h4 {
+  margin: 0 0 5px 0;
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.diagnosis-sidebar-item .diagnosis-date {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.diagnosis-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.pagination-btn {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  color: var(--primary-color);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pagination-btn:hover {
+  background-color: var(--accent-color);
+}
+
+.pagination-btn.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Информация профиля - правая секция */
+.profile-info {
+  grid-column: 2;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-block {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: var(--card-shadow);
+}
+
+.profile-block h3 {
+  color: var(--primary-dark);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 600;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent-color);
+  display: flex;
+  align-items: center;
+}
+
+.profile-block h3::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 20px;
+  background-color: var(--primary-color);
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.profile-block p {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile-block p strong {
+  min-width: 180px;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+/* Кнопки */
+.btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 10px 18px;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn.topup-btn {
+  margin-left: 10px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  background-color: var(--primary-light);
+}
+
+.btn.cancel-btn {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  margin-left: 10px;
+}
+
+.btn.cancel-btn:hover {
+  background-color: #f1f1f1;
+}
+
+.btn.danger-btn {
+  background-color: var(--danger-color);
+}
+
+.btn.danger-btn:hover {
+  background-color: #bd2130;
+}
+
+.btn.small {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+.btn.view-btn {
+  background-color: var(--primary-light);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Поля формы */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  background-color: var(--white);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(76, 143, 211, 0.15);
+}
+
+textarea.input-field {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.edit-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.form-buttons {
+  display: flex;
+  margin-top: 10px;
+}
+
+/* История диагнозов в основной секции */
+.diagnosis-history {
+  margin-top: 10px;
+}
+
+.history-stats {
+  background-color: var(--accent-color);
+  padding: 15px;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 20px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.diagnosis-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.diagnosis-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.diagnosis-item:hover {
+  border-color: var(--primary-light);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.diagnosis-info {
+  flex: 1;
+}
+
+.diagnosis-info p {
+  margin: 5px 0;
+}
+
+.diagnosis-actions {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+/* Настройки истории ИИ */
+.ai-history-settings {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: var(--accent-color);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ai-history-settings h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--primary-dark);
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--white);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.modal-buttons {
+  display: flex;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+/* Состояния загрузки и ошибки */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.loading-container p {
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.error-text {
+  color: var(--danger-color);
+  padding: 10px;
+  border-radius: var(--border-radius-sm);
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.small-error {
+  font-size: 0.9rem;
+  padding: 8px;
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+  .profile-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+  
+  .profile-avatar-container {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .diagnosis-history-sidebar {
+    grid-column: 1;
+    grid-row: 2;
+    margin-bottom: 20px;
+  }
+  
+  .profile-info {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-wrapper {
+    padding: 15px;
+  }
+  
+  .profile-block p {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .profile-block p strong {
+    min-width: auto;
+    margin-bottom: 4px;
+  }
+  
+  .diagnosis-item {
+    flex-direction: column;
+  }
+  
+  .diagnosis-actions {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
